@@ -5,7 +5,7 @@
 #include <arpa/inet.h>
 #include <pthread.h>
 
-#define SERVER_IP "10.2.1.40"  // Change this to the server's IP address
+#define SERVER_IP "10.2.1.41"  // Change this to the server's IP address
 #define PORT 12345
 #define BUFFER_SIZE 1024
 

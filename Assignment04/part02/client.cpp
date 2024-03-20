@@ -51,12 +51,7 @@ void func(int socket_fd, unsigned int pay){
 	t = clock();
 
 
-	freopen("output.txt","a",stdout);
 
-	printf(" %d \t  %f \n",100+i*10,total);
-
-	total=0;
-	fclose(stdout);
 
 	
 	while(true)
@@ -74,7 +69,12 @@ void func(int socket_fd, unsigned int pay){
 	t = clock() - t;
 	double time_taken = ((double)t)/CLOCKS_PER_SEC;
 	total += time_taken;
-}
+
+	freopen("output.txt","a",stdout);
+	printf(" %d \t  %f \n",100+i*10,total);
+fclose(stdout);
+	
+	}
 
 
 
@@ -111,7 +111,6 @@ int main(int argc, char* argv[]){
 	for(int i=0;i<100;i++){
 	func(socket_fd, 100+i*10);
 	printf("Packet size : %d  && time : %f \n",100+i*10,total);
-	total =0;
 
 }
         close(socket_fd);
